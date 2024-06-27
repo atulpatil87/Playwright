@@ -63,6 +63,38 @@ test ('locator',async ({page})=> {
     
 });
 
-test.only("Extract the school names", async ({page}) =>{
-    await page.goto(mentrStagingUrl)
+test("Extract the school names", async ({page}) =>{
+
+    // Go to the explore page.
+    await page.goto("https://staging.mentr-me.com/explore");
+
+    // for overcome the allTextContents problem we need to use "await page.waitForLoadState('networkidle');" --- it wait until the all network call done.
+    await page.waitForLoadState('networkidle');
+
+    // Close the walkthrough 
+    await page.click("//button[@title='Close']//*[name()='svg']");
+
+    // OR we can user "first" for only for first element.
+    console.log(await page.locator(".school-name").first().textContent());
+
+    // Primt the first 2 schools [we can use nth(<array index>) if multiple element are return]
+    console.log(await page.locator(".school-name").nth(1).textContent());
+    console.log(await page.locator(".school-name").nth(2).textContent());
+
+    // Extract the all school names. 
+
+    // we can use  waitfor() method for element until appear.
+    await page.locator(".school-name").first().waitFor();
+
+    // Note: the allTextContents method is not takes wait [make sure first use a waitForLoadState for page load]
+    let schoolNames = await page.locator(".school-name").allTextContents();
+
+    // Print the school names in console.
+    console.log(await schoolNames);
+
+    
+
+
+
+
 })

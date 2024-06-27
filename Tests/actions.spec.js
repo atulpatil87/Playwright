@@ -22,7 +22,5 @@ test('perform the actions',async ({page})=>{
 
         // click on sign in using locator. 
         await LogIn.click()
-    
-
 
 });
