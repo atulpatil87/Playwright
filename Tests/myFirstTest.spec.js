@@ -25,4 +25,3 @@ test ('open browser without creating instance',async ({page})=> {
     // verify title using assertion
     await expect(page).toHaveTitle("MentR-Me");
 });
-

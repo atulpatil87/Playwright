@@ -19,6 +19,13 @@ const config = {
 
     // select the browser
     browserName: 'chromium',
+    
+    // it capture the screenshot
+    screenshot: 'on',
+    trace: 'on',
+
+    //if want only failure data.
+    // trace: 'retain-on-failure'
 
     // headless true means it will open the browser UI.
     headless: true
