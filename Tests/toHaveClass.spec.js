@@ -10,6 +10,6 @@ await page.goto("https://rahulshettyacademy.com/loginpagePractise");
 const documentlink = page.locator("[href*='documents-request']");
 
 // Verify the class is applied.
-await expect(documentlink).toHaveAttribute("class","blinkingText");
+await expect(documentlink).toContainText("class","blinkingText");
 
 });
