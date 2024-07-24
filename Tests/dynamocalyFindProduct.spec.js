@@ -1,7 +1,7 @@
 const {test,expect} = require('@playwright/test');
 
 
-test.only('dynamically find product', async ({page}) => {
+test('dynamically find product', async ({page}) => {
 
     let website = "https://rahulshettyacademy.com/client/";
     let inputEmail = page.locator("#userEmail");
