@@ -2,7 +2,7 @@
 
 const {test,expect} = require('@playwright/test')
 
-test.only('getby',async ({page})=>{
+test('getby',async ({page})=>{
     const website = "https://rahulshettyacademy.com/angularpractice/";
     await page.goto(website);
 
@@ -29,9 +29,5 @@ test.only('getby',async ({page})=>{
 
     // for the add to the card
     // await page.locator("app-card").filter({hasText: 'Nokia Edge'}).getByRole("button").click();
-
-
-
-
 });
 
