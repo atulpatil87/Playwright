@@ -1,5 +1,9 @@
 const {test,expect,request} = require('@playwright/test')
 
+
+var token;
+var authTokens;
+
 // The beforeAll method, it run only once before the all method.
 test.beforeAll( async ()=>{
     const loginPayload = {email:"atul.p@mim-essay.com",password:"Atul@123",timezone:"Asia/Calcutta"} // Remove the "" from the fist key, in javascript we represt obect and value.
@@ -20,20 +24,24 @@ test.beforeAll( async ()=>{
     const loginResponseJson = await loginResponse.json();
 
     // Extract the token from the json.
-    const token = loginResponseJson.access_token;
+    var token = loginResponseJson.access_token;
 
     // print the token in console
     console.log(token);
 })
 
-test.only('open mentr-me',async ({page})=>{
+test('open mentr-me',async ({page})=>{
 
     page.addInitScript(value => {
 
     // set the token in brower local storage
-    page.localStorage.setItem('authTokens',value);
+    window.localStorage.setItem('authTokens',value);
 }, token );
     
     // Navisge to the mentr-me
-    await page.goto('https://staging.mentr-me.com/');
+    await page.goto('https://staging.mentr-me.com/home');
+
+    // click on the cta
+    await page.locator('text = Book a FREE Call!').nth(1).click();
+    await page.goto('https://mentr-me.com/');
 });
