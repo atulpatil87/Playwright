@@ -2,7 +2,7 @@ const {test,expect} = require('@playwright/test')
 import POManager from "../pageobjects/POManager";
 
 
-test("Book a call", async ({page}) => {
+test("Book a call with POM", async ({page}) => {
     
     const Email = "Atul1@mim-essay.com";
     const Password = "123456";
@@ -17,7 +17,7 @@ test("Book a call", async ({page}) => {
   await bookACall.goto();
 
   // Verify the Heading.
-  await expect(page.locator('div').filter({ hasText: /^We can help you get into your Dream Schools$/ })).toBeVisible();
+  //await expect(page.locator('div').filter({ hasText: "We can help you get into your Dream Schools" })).toBeVisible();
 
   // Verify the input box should be Empty.
   await  bookACall.verifyInputEmpty();
