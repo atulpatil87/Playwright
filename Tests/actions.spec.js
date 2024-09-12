@@ -11,7 +11,9 @@ test('perform the actions',async ({page})=>{
     // we can store the locator as well and use.
      const LogIn = page.locator("//button[@type='submit']");
     
-    // click action
+        // click action on 'login' btn
+        
+        
         // click on Email using locator
         await page.click('text=Email')
         // Fill the email input box.

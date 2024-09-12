@@ -1,8 +1,10 @@
+const Dataset = JSON.parse(JSON.stringify(require("../Utils/bookACallTestData.json")))
+
 class Intake{
 
     constructor(page){
         this.page = page;
-        this.intake1 = page.locator('text=2025');
+        this.intake1 = page.locator('text='+Dataset.Intake1);
         this.submitBtn = page.getByRole('button', { name: 'Submit' });
     }
 
