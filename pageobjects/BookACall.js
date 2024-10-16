@@ -1,7 +1,9 @@
 const {test,expect} = require('@playwright/test')
+//const dataset = require("../Utils/bookACallTestData.json")
+
 class BookACall {
 
-    constructor(page){
+    constructor(page){ 
         this.page = page;
         this.nameField = page.locator('#book_an_appointment_form').getByPlaceholder('Enter name');
         this.emailField = page.locator('#book_an_appointment_form').getByPlaceholder('Enter email');
@@ -21,7 +23,7 @@ class BookACall {
 
     async fillDetails(){
         await this.nameField.fill("Atul");
-        await this.emailField.fill("Atul.p+TestPlaywright@mim-essay.com");
+        await this.emailField.fill("Atul.p@mim-essay.com");
         await this.phoneField.fill("8552078787");
     }
 

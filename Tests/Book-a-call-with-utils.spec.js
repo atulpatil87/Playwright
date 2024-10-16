@@ -1,7 +1,6 @@
 const {test,expect} = require('@playwright/test')
 import POManager from "../pageobjects/POManager";
-const Dataset = JSON.parse(JSON.stringify(require("../Utils/bookACallTestData.json")))
-
+const dataset = JSON.parse(JSON.stringify(require("../Utils/bookACallTestData.json")))
 
 test("Book a call with Utils", async ({page}) => {
     
