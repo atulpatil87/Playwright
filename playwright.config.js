@@ -22,6 +22,7 @@ const config = {
     
     // it capture the screenshot
     screenshot: 'on',
+    //screenshot: 'only-on-failure',
     trace: 'on',
 
     //if want only failure data.
