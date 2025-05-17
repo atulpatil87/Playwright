@@ -70,7 +70,6 @@ test("Book a call", async ({page}) => {
 
   });
 
-
 // test('test', async ({ page }) => {
 //   await page.goto('https://staging.mim-essay.com/study-abroad-consultants');
 //   await page.locator('div').filter({ hasText: /^We can help you get into your Dream Schools$/ }).click();
